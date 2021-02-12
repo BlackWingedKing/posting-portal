@@ -1,0 +1,29 @@
+@import '../styles.scss';
+
+.sidenav-container {
+  position: relative;
+  background: $light;
+}
+
+.full-height{
+  height: 100%;
+}
+
+mat-sidenav{
+  @include set-width(20%);
+}
+
+mat-sidenav-content{
+  @include set-bg($light);
+}
+
+.outlet-main{
+  margin: 0 10% 0 10%;
+}
+
+@include media("<=tablet") {
+  mat-sidenav{
+    @include set-width(0%);
+  }
+}
+  

@@ -1,0 +1,6 @@
+@import "../../../styles.scss";
+
+mat-toolbar {
+    @include set-bg($light);
+}
+

@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+.disable-a{
+    pointer-events: none;
+}
+.enable-a{
+    pointer-events: all;
+}
+
+mat-form-field {
+    @include set-width(100%);
+}
+
+form{
+    margin: 2% auto 0% 2%;
+    @include set-width(75%);
+}

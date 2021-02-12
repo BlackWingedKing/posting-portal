@@ -1,0 +1,28 @@
+<!-- 
+    Now use the header with appropriate inputs
+ -->
+<app-add-posts (sendEvent)="addData($event)" (updateEvent)="updateData($event)" [inUpdateMode]="update" [updateID]="updateId"></app-add-posts>
+
+<!-- <app-header [title]="'Post Listing'" [redirectButtonName]="'Add Post'" [redirect]="'/add-post'"></app-header> -->
+<mat-toolbar style="position: relative; background-color: white;">
+    Post Listing
+</mat-toolbar>
+<main style="margin-top: 2rem;">
+    <mat-accordion>
+        <ng-container *ngFor="let post of dataList; index as i">
+            <mat-expansion-panel #postcard>
+                <mat-expansion-panel-header>
+                    <mat-panel-title [ngClass]="postcard._expanded?'opened-mode':'closed-mode'">
+                        {{post.title | titlecase}}
+                    </mat-panel-title>
+                    <mat-panel-description *ngIf="!(postcard._expanded)" style="float: right;">
+                        {{post.body | summary: post.title}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{post.body}}</p>
+                <button mat-raised-button color="warn" class="modify-button" (click)="deleteData(i)">Delete</button>
+                <button mat-raised-button color="primary" class="modify-button" (click)="showUpdateForm(i)">Update</button>
+            </mat-expansion-panel>
+        </ng-container>
+    </mat-accordion>
+</main>

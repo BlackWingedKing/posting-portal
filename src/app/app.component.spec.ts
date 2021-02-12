@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'posting-portal2'`, () => {
+  it(`should have as title 'posting-portal'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('posting-portal2');
+    expect(app.title).toEqual('posting-portal');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('posting-portal2 app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('posting-portal app is running!');
   });
 });

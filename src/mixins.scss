@@ -1,0 +1,7 @@
+@mixin set-bg($color){
+    background-color: $color;
+}
+
+@mixin set-width($value){
+    width: $value;
+}
